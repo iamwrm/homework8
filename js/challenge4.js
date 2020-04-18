@@ -21,3 +21,5 @@ $("form").submit(function (event) {
     }
 
 });
+
+var form_e = document.getElementById("challenge4_form").method= "get"
