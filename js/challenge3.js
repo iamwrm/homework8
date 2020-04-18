@@ -25,19 +25,21 @@ function validateForm(i_name) {
 
 
 $("form").submit(function (event) {
-    // if ( $( "input" ).first().val() === "correct" ) {
-    //   $( "span" ).text( "Validated..." ).show();
-    //   return;
-    // }
-
-    // $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
     var standing_valid = validateForm("standing")
     var grad_valid = validateForm("gradDate")
-    if (!(standing_valid == 1) || !(grad_valid == 1)) {
-        alert('One and only one button should be selected from Standing and Grad Date Form')
+    if ((standing_valid == 0) && (grad_valid == 0)) {
+        alert('You must select a standing and graduation date.')
         event.preventDefault();
         return
     }
-
-
+    if (!(standing_valid == 1) && (grad_valid == 1)) {
+        alert('You must select a standing.')
+        event.preventDefault();
+        return
+    }
+    if ((standing_valid == 1) && !(grad_valid == 1)) {
+        alert('You must select a graduation date')
+        event.preventDefault();
+        return
+    }
 });
