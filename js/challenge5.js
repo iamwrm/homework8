@@ -19,3 +19,5 @@ function m_out() {
 }
 
 $(".thumbnail").hover(m_in, m_out)
+$(".thumbnail").focus(m_in)
+$(".thumbnail").blur(m_out)
